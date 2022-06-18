@@ -3,7 +3,7 @@ body {
     background-size: cover;
 }
 
-.container {
+#myContainer {
     margin: 50px auto;
     padding: 20px;
     color: #1ab2a8;
