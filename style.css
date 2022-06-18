@@ -109,3 +109,8 @@ body {
 .list-group {
     padding: 0;
 }
+
+small {
+    text-align: justify;
+    color: #1ab2a8;
+}
