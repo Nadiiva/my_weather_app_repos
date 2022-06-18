@@ -31,7 +31,7 @@ body {
     color: #f4e711;
 }
 
-.bigrow {
+#bigrow {
     font-size: 24px;
     text-align: center;
     padding: 20px;
@@ -76,7 +76,7 @@ body {
     font-weight: 600;
 }
 
-.daysofweek {
+#daysofweek {
     border: 1px solid;
     border-color: #d1f0ee;
     margin: 2px;
@@ -106,7 +106,7 @@ body {
     text-align: center;
 }
 
-.list-group {
+#list-group {
     padding: 0;
 }
 
