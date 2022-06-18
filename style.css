@@ -1,0 +1,111 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1536514498073-50e69d39c6cf?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171");
+    background-size: cover;
+}
+
+.container {
+    margin: 50px auto;
+    padding: 20px;
+    color: #1ab2a8;
+    box-sizing: border-box;
+    max-width: 70%;
+    background-image: linear-gradient(#ffffff, #d1f0ee);
+    position: relative;
+}
+
+#myCity {
+    color: #1ab2a8;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+#celBtn {
+    background-color: #1ab2a8;
+}
+
+.sunlarge {
+    font-size: 72px;
+    color: #f4e711;
+}
+
+.bigrow {
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+}
+
+.searchbutton {
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: 14px;
+    background: #1ab2a8;
+    padding: 5px 2px;
+    box-shadow: 1px 1px 1px #d1f0ee;
+    border: 2px solid;
+    border-color: #1ab2a8;
+    border-radius: 2px;
+    transition: all 150ms ease-in-out;
+}
+
+.searchbutton:hover {
+    background: #ffffff;
+    color: #1ab2a8;
+    border-color: #1ab2a8;
+    box-shadow: 1px 1px 1px #d1f0ee;
+    cursor: pointer;
+}
+
+.cityinput {
+    border: 3px solid;
+    color: #1ab2a8;
+    border-radius: 3%;
+    border-color: #d1f0ee;
+}
+
+.todaytemp {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.daysofweek {
+    border: 1px solid;
+    border-color: #d1f0ee;
+    margin: 2px;
+    margin-top: 100px;
+}
+
+.item1 {
+    background: #d1f0ee;
+    margin: 2px;
+    padding: 5px;
+    border: 2px solid;
+    border-color: #d1f0ee;
+    font-weight: bold;
+    text-align: center;
+}
+
+.emoji {
+    margin: 5px;
+    border: 0px;
+    font-size: 36px;
+    text-align: center;
+}
+
+.item2 {
+    margin: 2px;
+    border: 0px;
+    text-align: center;
+}
+
+.list-group {
+    padding: 0;
+}
