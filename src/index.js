@@ -1,8 +1,4 @@
-//let temperature = Math.round(weather[city].temp);
-//let FTemp = Math.round((temperature * 9) / 5 + 32);
-//feature1 - to change date and time
 let myWeatherDate = new Date();
-
 let days = [
   "Sunday",
   "Monday",
@@ -79,42 +75,37 @@ currentBtn.addEventListener("click", updateCurrentLocation);
 //to show temperature and city name
 function showTemp(response) {
   document.querySelector("#myCity").innerHTML = response.data.name;
+  let descriptionElement = document.querySelector("#today-description");
   let currentTemp = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#myTemp");
+  let iconElement = document.querySelector("#icon");
   temperatureElement.innerHTML = `${currentTemp}`;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  celsiusTemperature = response.data.main.temp;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
-//feature2- to change city
-/*function changeCity(event) {
-  event.preventDefault();
-  let searchField = document.querySelector("#city-input");
-  let city = document.querySelector("#myCity");
-  if (searchField.value) {
-    city.innerHTML = searchField.value;
-  } else {
-    city.innerHTML = null;
-    alert("Please enter the city");
-  }
-}
-let enterCity = document.querySelector("#searchBtn");
-enterCity.addEventListener("click", changeCity);
-*/
-//feature 3 1 - click on button Fahrenheit
-/*let currentCelc = 25;
-function tempFar(event) {
-  event.preventDefault();
-  let tempFar = document.querySelector("#myTemp");
-  let currentFar = Math.round((currentCelc * 9) / 5 + 32);
-  tempFar.innerHTML = Math.round(currentFar);
-}
-let tFar = document.querySelector("#FarBtn");
-tFar.addEventListener("click", tempFar);
+let celsiusTemperature = null;
 
-//feature 3 2 - click on button Celcius
-function tempCelc(event) {
+//click on button Fahrenheit
+function displayFarTemp(event) {
   event.preventDefault();
-  let tempCelc = document.querySelector("#myTemp");
-  tempCelc.innerHTML = Math.round(currentCelc);
+  let currentFar = Math.round((celsiusTemperature * 9) / 5 + 32);
+  let nowTemperature = document.querySelector("#myTemp");
+  nowTemperature.innerHTML = currentFar;
 }
-let tCelcius = document.querySelector("#celBtn");
-tCelcius.addEventListener("click", tempCelc);
-*/
+let fahrenheitLink = document.querySelector("#FarBtn");
+fahrenheitLink.addEventListener("click", displayFarTemp);
+
+// click on button Celcius
+function displayCelTemp(event) {
+  event.preventDefault();
+  let nowTemperature = document.querySelector("#myTemp");
+  nowTemperature.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusLink = document.querySelector("#celBtn");
+celsiusLink.addEventListener("click", displayCelTemp);

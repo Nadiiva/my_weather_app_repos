@@ -1,5 +1,5 @@
 body {
-    background-image: url("https://images.unsplash.com/photo-1536514498073-50e69d39c6cf?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171");
+    background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80");
     background-size: cover;
 }
 
@@ -8,9 +8,11 @@ body {
     padding: 20px;
     color: #1ab2a8;
     box-sizing: border-box;
-    max-width: 70%;
+    max-width: 700px;
     background-image: linear-gradient(#ffffff, #d1f0ee);
     position: relative;
+    border-radius: 3%;
+    box-shadow: 2px -3px 5px #EDE8DC;
 }
 
 #myCity {
@@ -26,15 +28,25 @@ body {
     background-color: #1ab2a8;
 }
 
+#celBtn:hover {
+    background-color: #d1f0ee;
+}
+
 .sunlarge {
     font-size: 72px;
-    color: #f4e711;
+    border-radius: 50%;
+    background: #1ab2a8;
 }
 
 #bigrow {
     font-size: 24px;
     text-align: center;
     padding: 20px;
+}
+
+#forecast {
+    position: relative;
+    margin-left: 15px;
 }
 
 .searchbutton {
@@ -80,7 +92,7 @@ body {
     border: 1px solid;
     border-color: #d1f0ee;
     margin: 2px;
-    margin-top: 100px;
+    margin-top: 10px;
 }
 
 .item1 {
@@ -110,7 +122,22 @@ body {
     padding: 0;
 }
 
-small {
+#signature {
+    color: #404345;
+    text-align: center;
+    font-size: 14px;
+    margin-top: -30px;
+    font-weight: bold;
 
-    color: #1ab2a8;
+}
+
+.link {
+    color: #404345;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#current-time {
+    font-size: 42px;
+    font-weight: bold;
 }
