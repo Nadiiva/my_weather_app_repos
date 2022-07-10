@@ -40,6 +40,49 @@ if (minutes < 10) {
 let myTime = document.querySelector("#current-time");
 myTime.innerHTML = `${hours}:${minutes}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+//forecast
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row" id="forecast">`;
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="card" id="daysofweek" style="width: 8rem;">
+              <div class="card-body" id="list-group">
+                <div class="card-title item1" id="day1">${formatDay(
+                  forecastDay.dt
+                )}</div>
+                <div class="card-text emoji">
+                <img src="http://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png" alt ="" id="icon">
+                </div>
+                <div class="card-text item2">${
+                  forecastDay.weather[0].description
+                }</div>
+                <div class="card-footer item2"><strong>${Math.round(
+                  forecastDay.temp.max
+                )}° C</strong></div>
+              </div>
+            </div>`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //to change city from search form
 function searchCity(city) {
   let apiKey = "6f1306f7f8bee2c41e16829d7f8e584c";
@@ -54,6 +97,12 @@ function handleSubmit(event) {
 }
 let searchForm = document.querySelector("#searchBtn");
 searchForm.addEventListener("click", handleSubmit);
+
+function getForecast(coordinates) {
+  let apiKey = "6f1306f7f8bee2c41e16829d7f8e584c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 //to search current position
 function getMyLocation(position) {
@@ -87,6 +136,7 @@ function showTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  getForecast(response.data.coord);
 }
 let celsiusTemperature = null;
 
@@ -98,7 +148,8 @@ function displayFarTemp(event) {
   nowTemperature.innerHTML = currentFar;
 }
 let fahrenheitLink = document.querySelector("#FarBtn");
-fahrenheitLink.addEventListener("click", displayFarTemp);
+fahrenheitLink.add;
+EventListener("click", displayFarTemp);
 
 // click on button Celcius
 function displayCelTemp(event) {
@@ -109,3 +160,4 @@ function displayCelTemp(event) {
 
 let celsiusLink = document.querySelector("#celBtn");
 celsiusLink.addEventListener("click", displayCelTemp);
+searchCity("Kyiv");
