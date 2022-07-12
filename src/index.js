@@ -138,26 +138,5 @@ function showTemp(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
   getForecast(response.data.coord);
 }
-let celsiusTemperature = null;
 
-//click on button Fahrenheit
-function displayFarTemp(event) {
-  event.preventDefault();
-  let currentFar = Math.round((celsiusTemperature * 9) / 5 + 32);
-  let nowTemperature = document.querySelector("#myTemp");
-  nowTemperature.innerHTML = currentFar;
-}
-let fahrenheitLink = document.querySelector("#FarBtn");
-fahrenheitLink.add;
-EventListener("click", displayFarTemp);
-
-// click on button Celcius
-function displayCelTemp(event) {
-  event.preventDefault();
-  let nowTemperature = document.querySelector("#myTemp");
-  nowTemperature.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusLink = document.querySelector("#celBtn");
-celsiusLink.addEventListener("click", displayCelTemp);
 searchCity("Kyiv");

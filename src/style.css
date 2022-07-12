@@ -24,14 +24,6 @@ body {
     line-height: 1.2;
 }
 
-#celBtn {
-    background-color: #1ab2a8;
-}
-
-#celBtn:hover {
-    background-color: #d1f0ee;
-}
-
 .sunlarge {
     font-size: 72px;
     border-radius: 50%;
@@ -46,7 +38,7 @@ body {
 
 #forecast {
     position: relative;
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .searchbutton {
