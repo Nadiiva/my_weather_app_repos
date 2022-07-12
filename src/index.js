@@ -72,9 +72,11 @@ function displayForecast(response) {
                 <div class="card-text item2">${
                   forecastDay.weather[0].description
                 }</div>
-                <div class="card-footer item2"><strong>${Math.round(
+                <div class="card-footer item2">☀<strong>${Math.round(
                   forecastDay.temp.max
-                )}° C</strong></div>
+                )}</strong>° C<br/>🌙<strong>${Math.round(
+          forecastDay.temp.min
+        )}</strong>° C</div>
               </div>
             </div>`;
     }
